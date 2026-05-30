@@ -53,12 +53,10 @@ export default function Movements( { item }: { item: Account } ) {
             <MotiView 
               style={styles.skeleton}
               from={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ type: "timing" }}
+              animate={{ opacity: 1}}
             >
-
+              {item.type === 1 ? `R$ ${new Intl.NumberFormat('pt-BR', { minimumFractionDigits: 2 }).format(item.value)}` : `R$ -${new Intl.NumberFormat('pt-BR', { minimumFractionDigits: 2}).format(item.value)}`}
             </MotiView>
-          </AnimatePresence>
         )}
       </View>
     </TouchableOpacity>
@@ -80,35 +78,15 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
 
-  date: {
-    color: '#c4c4c4',
-    fontWeight: 'bold',
-  },
-
-  label: {
+  text: {
     fontSize: 16,
+    color: '#000',
     fontWeight: 'bold',
   },
 
-  value: {
-    fontSize: 16,
-    color: '#00ff00',
-    fontWeight: 'bold',
-  },
-
-  expense: {
-    fontSize: 16,
-    color: '#ff0000',
-    fontWeight: 'bold',
-  },
-
-  skeleton: {
-    minHeight: 16,
-    marginTop: 6,
-    width: 80,
-    height: 10,
-    backgroundColor: '#c4c4c4',
-    borderRadius: 8,
+  button: {
+    backgroundColor: '#871cfe',
+    borderRadius: 50,
   },
   
 });

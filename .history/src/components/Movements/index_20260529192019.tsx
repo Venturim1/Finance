@@ -90,25 +90,15 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 
-  value: {
+  text: {
     fontSize: 16,
-    color: '#00ff00',
+    color: '#000',
     fontWeight: 'bold',
   },
 
-  expense: {
-    fontSize: 16,
-    color: '#ff0000',
-    fontWeight: 'bold',
-  },
-
-  skeleton: {
-    minHeight: 16,
-    marginTop: 6,
-    width: 80,
-    height: 10,
-    backgroundColor: '#c4c4c4',
-    borderRadius: 8,
+  button: {
+    backgroundColor: '#871cfe',
+    borderRadius: 50,
   },
   
 });

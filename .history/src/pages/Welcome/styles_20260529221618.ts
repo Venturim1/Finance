@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-import colors from '../../theme/colors';
+import colors from '../../styles/colors';
 
 const styles = StyleSheet.create({
   container: {
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
 
   button: {
     // position: 'absolute',
-    backgroundColor: colors.dark_purple,
+    backgroundColor: '#871cfe',
     borderRadius: 50,
     paddingVertical: 8,
     width: '60%',
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
 
   buttonText: {
     fontSize: 18,
-    color: colors.white,
+    color: '#fff',
     fontWeight: 'bold',
   },
 });

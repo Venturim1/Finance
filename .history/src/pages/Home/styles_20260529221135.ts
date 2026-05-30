@@ -5,7 +5,7 @@ import colors from '../../theme/colors';
 const styles = StyleSheet.create({
   container: {
     // flex: 1,
-    backgroundColor: colors.opacity_black,
+    backgroundColor: colors.opacity_white,
   },
 
   header: {
@@ -14,19 +14,19 @@ const styles = StyleSheet.create({
 
   scrollArea: {
     marginTop: 80,
-    color: colors.gray_400,
+    color: colors.gray_200,
   },
 
   title: {
     fontSize: 18,
     fontWeight: "bold",
-    color: colors.dark_purple,
+    color: "#d8b7ff",
     margin: 14,
     marginTop: 16,
     marginBottom: 16,
     paddingBottom: 8,
     borderBottomWidth: 4,
-    borderBottomColor: colors.light_purple,
+    borderBottomColor: "#d8b7ff",
   },
 
   list: {

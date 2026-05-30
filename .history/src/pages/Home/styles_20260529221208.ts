@@ -5,7 +5,7 @@ import colors from '../../theme/colors';
 const styles = StyleSheet.create({
   container: {
     // flex: 1,
-    backgroundColor: colors.opacity_black,
+    backgroundColor: colors.opacity_white,
   },
 
   header: {

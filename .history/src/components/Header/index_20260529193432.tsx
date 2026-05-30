@@ -11,8 +11,6 @@ import {
 import { Feather } from '@expo/vector-icons';
 import { MotiView, MotiText } from 'moti';
 
-import colors from '../../theme/colors';
-
 const statusBarHeight = StatusBar.currentHeight ? StatusBar.currentHeight + 22 : 64;
 
 export default function Header({ name }: { name: string }) {
@@ -61,7 +59,7 @@ export default function Header({ name }: { name: string }) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.dark_purple,
+    backgroundColor: '#d8b7ff',
     paddingTop: statusBarHeight,
     flexDirection: 'row',
     paddingStart: 16,
@@ -78,14 +76,14 @@ const styles = StyleSheet.create({
 
   username: {
     fontSize: 18,
-    color: colors.white,
+    color: '#fff',
     fontWeight: 'bold',
   },
 
   buttonUser: {
     width: 44,
     height: 44,
-    backgroundColor: colors.opacity_white,
+    backgroundColor: 'rgba(255, 255, 255, 0.5)',
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 44 / 2,
@@ -93,6 +91,6 @@ const styles = StyleSheet.create({
 
   text: {
     fontSize: 14,
-    color: colors.white,
+    color: '#fff',
   }
 });

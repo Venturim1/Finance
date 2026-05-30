@@ -15,7 +15,6 @@ import styles from './styles';
 import type { Account } from '../../types';
 
 import Header from '../../components/Header';
-import Balance from '../../components/Balance';
 import Movements from '../../components/Movements';
 
 const list = [
@@ -77,8 +76,6 @@ export default function Home() {
     <View style={styles.container}>
       <View style={styles.header}>
         <Header name="gastaopoupudo@gmail.com" />
-
-        <Balance entradas={2500.00} gastos={320.00} />
       </View>
 
       <ScrollView 

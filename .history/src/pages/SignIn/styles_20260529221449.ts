@@ -1,7 +1,5 @@
 import { StyleSheet } from 'react-native';
 
-import colors from '../../theme/colors';
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -42,7 +40,7 @@ const styles = StyleSheet.create({
   },
 
   button: {
-    backgroundColor: colors.dark_purple,
+    backgroundColor: '#871cfe',
     width: '100%',
     borderRadius: 8,
     paddingVertical: 8,
@@ -52,7 +50,7 @@ const styles = StyleSheet.create({
   },
 
   buttonText: {
-    color: colors.white,
+    color: '#fff',
     fontSize: 18,
     fontWeight: 'bold',
   },
@@ -63,7 +61,7 @@ const styles = StyleSheet.create({
   },
 
   registerText: {
-    color: colors.gray_400,
+    color: '#8d8d99',
   },
 });
 

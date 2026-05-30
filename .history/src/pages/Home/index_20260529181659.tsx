@@ -15,7 +15,6 @@ import styles from './styles';
 import type { Account } from '../../types';
 
 import Header from '../../components/Header';
-import Balance from '../../components/Balance';
 import Movements from '../../components/Movements';
 
 const list = [
@@ -38,13 +37,6 @@ const list = [
     label: 'Pix Cliente X', 
     value: 2500.00, 
     date: '22/01/2024', 
-    type: 1 // receitas / entradas
-  },
-  { 
-    id: 4, 
-    label: 'Pix Cliente Y', 
-    value: 1270.00, 
-    date: '13/03/2024', 
     type: 1 // receitas / entradas
   },
 ];
@@ -76,9 +68,7 @@ export default function Home() {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Header name="gastaopoupudo@gmail.com" />
-
-        <Balance entradas={2500.00} gastos={320.00} />
+        <Header />
       </View>
 
       <ScrollView 

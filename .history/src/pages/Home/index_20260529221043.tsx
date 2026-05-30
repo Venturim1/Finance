@@ -18,6 +18,8 @@ import Header from '../../components/Header';
 import Balance from '../../components/Balance';
 import Movements from '../../components/Movements';
 
+import colors from '../../theme/colors';
+
 const list = [
   { 
     id: 1, 

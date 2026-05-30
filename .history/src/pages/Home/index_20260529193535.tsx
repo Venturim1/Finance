@@ -15,7 +15,6 @@ import styles from './styles';
 import type { Account } from '../../types';
 
 import Header from '../../components/Header';
-import Balance from '../../components/Balance';
 import Movements from '../../components/Movements';
 
 const list = [
