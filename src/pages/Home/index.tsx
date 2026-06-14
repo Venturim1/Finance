@@ -73,12 +73,22 @@ export default function Home() {
 
   const flashListRef = useRef<FlashListRef<Account> | null>(null);
 
+  const entradas = accounts
+    .filter((item) => item.type === 1)
+    .reduce((total, item) => total + item.value, 0);
+
+  const gastos = accounts
+    .filter((item) => item.type === 0)
+    .reduce((total, item) => total + item.value, 0);
+
+  const saldo = entradas - gastos;
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         <Header name="gastaopoupudo@gmail.com" />
 
-        <Balance entradas={2500.00} gastos={320.00} />
+        <Balance entradas={entradas} gastos={gastos} saldo={saldo} />
       </View>
 
       <ScrollView 

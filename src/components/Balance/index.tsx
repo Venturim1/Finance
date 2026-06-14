@@ -9,7 +9,7 @@ import { MotiView } from 'moti';
 
 import colors from '../../theme/colors';
 
-export default function Balance({ entradas, gastos }: { entradas: number, gastos: number }) {
+export default function Balance({ entradas, gastos, saldo }: { entradas: number, gastos: number, saldo: number }) {
   return (
     <MotiView
       style={styles.container}
@@ -40,6 +40,14 @@ export default function Balance({ entradas, gastos }: { entradas: number, gastos
         <View style={styles.content}>
           <Text style={styles.currencySymbol}>R$</Text>
           <Text style={styles.expenses}>{new Intl.NumberFormat('pt-BR', { minimumFractionDigits: 2 }).format(gastos)}</Text>
+        </View>
+      </View>
+
+      <View style={styles.item}>
+        <Text style={styles.itemTitle}>Saldo</Text>
+        <View style={styles.content}>
+          <Text style={styles.currencySymbol}>R$</Text>
+          <Text style={saldo >= 0 ? styles.income : styles.expenses}>{new Intl.NumberFormat('pt-BR', { minimumFractionDigits: 2 }).format(saldo)}</Text>
         </View>
       </View>
 
