@@ -12,23 +12,25 @@ import { Feather } from '@expo/vector-icons';
 import { MotiView, AnimatePresence, MotiText } from 'moti';
 
 import type { Account } from '../../types';
+import { useTheme } from '../../context/ThemeContext';
 
 export default function Movements( { item }: { item: Account } ) {
   const [showValue, setShowValue] = useState(false);
+  const { theme } = useTheme();
 
   const handleItemPressed = () => {
     setShowValue(!showValue);
   };
 
   return (
-    <TouchableOpacity 
-      style={styles.container}
+    <TouchableOpacity
+      style={[styles.container, { borderBottomColor: theme.movementBorder }]}
       onPress={ () => handleItemPressed() }
     >
-      <Text style={styles.date}>{item.date}</Text>
+      <Text style={[styles.date, { color: theme.textSecondary }]}>{item.date}</Text>
 
       <View style={styles.content}>
-        <Text style={styles.label}>{item.label}</Text>
+        <Text style={[styles.label, { color: theme.textPrimary }]}>{item.label}</Text>
 
         {showValue ? (
           <AnimatePresence exitBeforeEnter>
@@ -50,8 +52,8 @@ export default function Movements( { item }: { item: Account } ) {
           </AnimatePresence>
         ) : (
           <AnimatePresence exitBeforeEnter>
-            <MotiView 
-              style={styles.skeleton}
+            <MotiView
+              style={[styles.skeleton, { backgroundColor: theme.skeletonColor }]}
               from={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ type: "timing" }}

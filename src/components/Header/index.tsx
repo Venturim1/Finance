@@ -12,12 +12,15 @@ import { Feather } from '@expo/vector-icons';
 import { MotiView, MotiText } from 'moti';
 
 import colors from '../../theme/colors';
+import { useTheme } from '../../context/ThemeContext';
 
 const statusBarHeight = StatusBar.currentHeight ? StatusBar.currentHeight + 22 : 64;
 
 export default function Header({ name }: { name: string }) {
+  const { theme } = useTheme();
+
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { backgroundColor: theme.headerBackground }]}>
       <MotiView
         style={styles.content}
         from={{

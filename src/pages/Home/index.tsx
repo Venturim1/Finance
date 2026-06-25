@@ -1,17 +1,20 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-import { 
-  View, 
-  Text, 
-  ScrollView, 
+import {
+  View,
+  Text,
+  ScrollView,
+  TouchableOpacity,
 } from 'react-native';
 
 import { useFocusEffect, useNavigation } from '@react-navigation/native';
 
+import { Feather } from '@expo/vector-icons';
 import { FlashList } from '@shopify/flash-list';
 import type { FlashListRef, ListRenderItem } from '@shopify/flash-list';
 
-import styles from './styles';
+import { useTheme } from '../../context/ThemeContext';
+import { getStyles } from './styles';
 import type { Account } from '../../types';
 
 import Header from '../../components/Header';
@@ -52,6 +55,8 @@ const list = [
 export default function Home() {
   const [accounts, setAccounts] = useState<Account[]>([]);
   const [loading, setLoading] = useState(true);
+  const { isDark, theme, toggleTheme } = useTheme();
+  const styles = getStyles(theme);
 
   const EmptyListMessage = () => {
     if (loading) {
@@ -91,12 +96,27 @@ export default function Home() {
         <Balance entradas={entradas} gastos={gastos} saldo={saldo} />
       </View>
 
-      <ScrollView 
+      <ScrollView
         style={styles.scrollArea}
         showsVerticalScrollIndicator={false}
       >
-        <Text style={styles.title}>Últimas movimentações</Text>
-        
+        <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginEnd: 14 }}>
+          <Text style={styles.title}>Últimas movimentações</Text>
+          <TouchableOpacity
+            onPress={toggleTheme}
+            style={{
+              width: 44,
+              height: 44,
+              borderRadius: 22,
+              backgroundColor: isDark ? theme.cardBackground : theme.titleBorder,
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <Feather name={isDark ? 'sun' : 'moon'} size={22} color={isDark ? '#ffd700' : '#fff'} />
+          </TouchableOpacity>
+        </View>
+
         <View style={styles.list}>
           <FlashList<Account>
             // ref={flashListRef}

@@ -8,11 +8,14 @@ import {
 import { MotiView } from 'moti';
 
 import colors from '../../theme/colors';
+import { useTheme } from '../../context/ThemeContext';
 
 export default function Balance({ entradas, gastos, saldo }: { entradas: number, gastos: number, saldo: number }) {
+  const { theme } = useTheme();
+
   return (
     <MotiView
-      style={styles.container}
+      style={[styles.container, { backgroundColor: theme.cardBackground, borderColor: theme.cardBorder }]}
       from={{
         rotateX: "-100deg",
         opacity: 0,

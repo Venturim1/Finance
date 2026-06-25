@@ -5,16 +5,19 @@ import { NavigationContainer } from "@react-navigation/native";
 import { ScreenStack } from "react-native-screens";
 
 import Routes from "./src/routes";
+import { ThemeProvider } from "./src/context/ThemeContext";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <NavigationContainer>
-        <ScreenStack>
-          <Routes />
-        </ScreenStack>
-      </NavigationContainer>
-    </View>
+    <ThemeProvider>
+      <View style={styles.container}>
+        <NavigationContainer>
+          <ScreenStack>
+            <Routes />
+          </ScreenStack>
+        </NavigationContainer>
+      </View>
+    </ThemeProvider>
   );
 }
 

@@ -2,38 +2,43 @@ import { StyleSheet } from "react-native";
 
 import colors from '../../theme/colors';
 
-const styles = StyleSheet.create({
-  container: {
-    // flex: 1,
-    backgroundColor: colors.opacity_black,
-  },
+type Theme = {
+  background: string;
+  titleColor: string;
+  titleBorder: string;
+  textSecondary: string;
+};
 
-  header: {
-    marginTop: 0,
-  },
+export function getStyles(theme: Theme) {
+  return StyleSheet.create({
+    container: {
+      backgroundColor: theme.background,
+    },
 
-  scrollArea: {
-    marginTop: 80,
-    color: colors.gray_400,
-  },
+    header: {
+      marginTop: 0,
+    },
 
-  title: {
-    fontSize: 18,
-    fontWeight: "bold",
-    color: colors.dark_purple,
-    margin: 14,
-    marginTop: 16,
-    marginBottom: 16,
-    paddingBottom: 8,
-    borderBottomWidth: 4,
-    borderBottomColor: colors.light_purple,
-  },
+    scrollArea: {
+      marginTop: 80,
+      color: theme.textSecondary,
+    },
 
-  list: {
-    marginStart: 14,
-    marginEnd: 14,
-    // minHeight: 150,
-  },
-});
+    title: {
+      fontSize: 18,
+      fontWeight: "bold",
+      color: theme.titleColor,
+      margin: 14,
+      marginTop: 16,
+      marginBottom: 16,
+      paddingBottom: 8,
+      borderBottomWidth: 4,
+      borderBottomColor: theme.titleBorder,
+    },
 
-export default styles;
+    list: {
+      marginStart: 14,
+      marginEnd: 14,
+    },
+  });
+}
